@@ -1,1 +1,1 @@
-exports.domain = "http://api.alquran.cloud/v1";
+exports.domain = "http://homitagstreamingservice.azurewebsites.net/";
