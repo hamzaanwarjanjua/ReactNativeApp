@@ -15,19 +15,19 @@ import FloatingAction from "../components/FloatingAction";
 import API from "../services/api";
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function Movies({ navigation }) {
+export default function Genres({ navigation }) {
   //   const mov = [];
-  const [Movies, SetMovies] = useState([]);
+  const [Genres, SetGenres] = useState([]);
   const [isLoading, SetLoading] = useState(true);
 
   useEffect(() => {
-    API.getMovies((dbMovies) => {
-      SetMovies(dbMovies);
+    API.getGenres((dbGenres) => {
+      SetGenres(dbGenres);
       SetLoading(false);
     });
-  }, [Movies]);
+  }, [Genres]);
 
-  const mapList = Movies.map((data) => {
+  const mapList = Genres.map((data) => {
     return (
       <ItemCard
         key={data.ID}
@@ -57,7 +57,7 @@ export default function Movies({ navigation }) {
         /> */}
         {mapList}
       </ScrollView>
-      <FloatingAction navigation={navigation} createscreen="CreateMovie" />
+      <FloatingAction navigation={navigation} createscreen="CreateGenre" />
     </View>
   );
 }

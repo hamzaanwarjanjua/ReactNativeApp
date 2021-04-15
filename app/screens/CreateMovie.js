@@ -10,33 +10,17 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 import { render } from "react-dom";
-import ItemCard from "../components/ItemCard";
 import FloatingAction from "../components/FloatingAction";
 import API from "../services/api";
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function Movies({ navigation }) {
+export default function CreateMovie() {
   //   const mov = [];
-  const [Movies, SetMovies] = useState([]);
+  //   const [Movies, SetMovies] = useState([]);
   const [isLoading, SetLoading] = useState(true);
 
   useEffect(() => {
-    API.getMovies((dbMovies) => {
-      SetMovies(dbMovies);
-      SetLoading(false);
-    });
-  }, [Movies]);
-
-  const mapList = Movies.map((data) => {
-    return (
-      <ItemCard
-        key={data.ID}
-        movie={data}
-        // NavigateTo={() => {
-        //   this.props.props.navigation.navigate(screens.detail);
-        // }}
-      />
-    );
+    SetLoading(false);
   });
 
   return (
@@ -55,9 +39,8 @@ export default function Movies({ navigation }) {
             this.props.props.navigation.navigate(screens.detail);
           }}
         /> */}
-        {mapList}
       </ScrollView>
-      <FloatingAction navigation={navigation} createscreen="CreateMovie" />
+      <FloatingAction />
     </View>
   );
 }

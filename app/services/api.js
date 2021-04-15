@@ -38,6 +38,23 @@ function getMovies(callback) {
 }
 exports.getMovies = getMovies;
 
+function getGenres(callback) {
+  fetch(config.domain + "api/Genre", {
+    method: "GET",
+    headers: {
+      accepts: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      callback(responseJson);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+exports.getGenres = getGenres;
+
 /**
  * Gets list of restaurants
  * @param {Function} callback
