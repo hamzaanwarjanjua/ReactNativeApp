@@ -7,7 +7,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.textBackground}>
-        <Text style={styles.textHeading}>Simple React Native App</Text>
+        <Text style={styles.textHeading}>React Native App</Text>
       </View>
       <TouchableOpacity
         style={[styles.customButton, styles.exploreButton]}

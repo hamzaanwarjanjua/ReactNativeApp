@@ -16,7 +16,10 @@ export default function DashBoard({ navigation }) {
       >
         <Text style={{ color: "white", fontSize: 20 }}>Movies</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.customButton, styles.dashboardButtons]}>
+      <TouchableOpacity
+        style={[styles.customButton, styles.dashboardButtons]}
+        onPress={() => navigation.navigate("Genres")}
+      >
         <Text style={{ color: "white", fontSize: 20 }}>Genres</Text>
       </TouchableOpacity>
 
